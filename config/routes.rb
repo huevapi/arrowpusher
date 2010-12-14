@@ -1,6 +1,8 @@
 Pusherapp::Application.routes.draw do
 
-  resource :main
+  resource :main do
+    get 'send_me'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
