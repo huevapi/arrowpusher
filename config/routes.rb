@@ -3,6 +3,8 @@ Pusherapp::Application.routes.draw do
   resource :main do
     get 'send_me'
     post 'auth'
+    get 'login'
+    post 'do_login'
   end
 
   # The priority is based upon order of creation:

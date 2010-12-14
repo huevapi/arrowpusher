@@ -4,9 +4,11 @@ $(document).ready(function() {
     var myChannel = pusher.subscribe('presence-nicolas');
     Pusher.channel_auth_endpoint = '/main/auth';
 
+    var user_id;
+
     // Binding
-    myChannel.bind('pusher:subscription_succeeded', function(member_list) {
-        alert(member_list);
+    myChannel.bind('pusher:subscription_succeeded', function(user) {
+        user_id = user.user_id;
     });
     
     myChannel.bind('create', function(thing) {
