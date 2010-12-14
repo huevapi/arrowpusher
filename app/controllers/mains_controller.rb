@@ -1,15 +1,15 @@
 class MainsController < ActionController::Base
   layout 'application'
 
-  #user name
-  def do_login
-    cookies[:user] = params[:user]
-    redirect_to :action=>:show
+  def reset
+
   end
 
+  def get_id
 
+  end
 
-  def send_me
+  def finish
     Pusher['presence-nicolas'].trigger('create', {:text=>"hola"})
   end
 
