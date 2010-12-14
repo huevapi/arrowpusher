@@ -4,7 +4,7 @@ Pusherapp::Application.routes.draw do
     post 'auth'
     get 'get_id'
     get 'reset'
-    post 'finish'
+    get 'finish'
   end
 
   # The priority is based upon order of creation:

@@ -2,12 +2,11 @@ class MainsController < ActionController::Base
   layout 'application'
 
   def reset
-    @id = 1
+    @@id = 1
   end
 
   def get_id
-    @@id ||= 1
-    render :json=>{:id=>@@id}
+    @@id ||= 0
     @@id=@@id+1
   end
 
