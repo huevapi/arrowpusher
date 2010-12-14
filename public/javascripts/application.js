@@ -12,7 +12,9 @@ $(document).ready(function() {
     });
     
     myChannel.bind('message', function(data) {
-        alert(data.id);
+        if(data.id == user_id - 1)
+        	init();
+        	
     });
     
     
@@ -31,6 +33,9 @@ $(document).ready(function() {
 		ctx.fillStyle = "rgb(200,0,0)"; 
 		ctx.fillRect(lastX, lastY, width, height);
 		
+		if(lastX == width)
+			$.get('/main/finish', {id: user_id});
+			
 		setTimeout(drawPlayer, 100);
 	}
 
@@ -53,6 +58,6 @@ $(document).ready(function() {
       }  
     }  
 
-	$.get('/main/finish', {id: user_id});
+	
 	
 });
